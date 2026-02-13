@@ -4,6 +4,7 @@ from tkinter import *
 
 def get_quote():
     response = requests.get("http://api.kanye.rest")
+    response.raise_for_status()
     canvas.itemconfig(quote_text, text=response.json()["quote"])
 
 
