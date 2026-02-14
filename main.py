@@ -24,7 +24,7 @@ def is_iss_overhead(MY_LAT, MY_LONG):
         iss_response.raise_for_status()
         longitude = float(iss_response.json()["iss_position"]["longitude"])
         latitude = float(iss_response.json()["iss_position"]["latitude"])
-        if (latitude + 5) > MY_LAT > (latitude - 5) and (longitude + 5) > MY_LAT > (longitude - 5):
+        if (latitude + 5) > MY_LAT > (latitude - 5) and (longitude + 5) > MY_LONG > (longitude - 5):
             return True
         else:
             return False
